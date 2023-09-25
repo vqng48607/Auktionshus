@@ -1,6 +1,8 @@
 ﻿using System.Net.Sockets;
 using System.Net;
 using System.Text;
+using AuktionhusServer.Models;
+using AuktionhusServer.Controller;
 
 namespace AuktionshusServer
 {
@@ -41,6 +43,7 @@ namespace AuktionshusServer
                 // to connect to Server
                 listener.Listen(10);
 
+                
                 while (true)
                 {
 
@@ -64,12 +67,15 @@ namespace AuktionshusServer
                         data += Encoding.ASCII.GetString(bytes,
                                                    0, numByte);
 
+
                         if (data.IndexOf("<EOF>") > -1)
                             break;
                     }
 
                     Console.WriteLine("Text received -> {0} ", data);
                     byte[] message = Encoding.ASCII.GetBytes("Test Server");
+
+
 
                     // Send a message to Client
                     // using Send() method

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Auktionhus.Models
+namespace AuktionhusServer.Models
 {
     public class Item
     {
@@ -14,12 +14,12 @@ namespace Auktionhus.Models
         public DateTime AuktionTime { get; set; }
 
 
-        public Item(string name, decimal minimunPrice, decimal salesPrice, DateTime auktionTime)
+        public Item(string name, decimal minimunPrice, decimal salesPrice)
         {
             Name = name;
             MinimunPrice = minimunPrice;
             SalesPrice = salesPrice;
-            AuktionTime = auktionTime;
+            
         }
 
     }

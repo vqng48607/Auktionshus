@@ -1,17 +1,17 @@
-﻿using Auktionhus.Models;
+﻿using AuktionhusServer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Auktionhus.Controller
+namespace AuktionhusServer.Controller
 {
     internal class ItemController
     {
-        public void Create(int id, decimal minimunPrice, decimal salesPrice, DateTime auktionTime)
+        public void Create(string name, decimal minimunPrice, decimal salesPrice)
         {
-            Item item = new Item(id, minimunPrice, salesPrice, auktionTime);
+            Item item = new Item(name, minimunPrice, salesPrice);
 
             List<Item> items = new List<Item>();
             items.Add(item);
